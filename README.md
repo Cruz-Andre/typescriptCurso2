@@ -6,7 +6,10 @@
 - Template dinâmico; :white_check_mark:
 - Formatação de datas usando Intl. :white_check_mark:
 ### Aula 2:
-- 
+- Herança com TypeScript; :white_check_mark:
+- Classes com tipo genérico; :white_check_mark:
+- Classes abstratas; :white_check_mark:
+- O modificador protected. :white_check_mark:
 ### Aula 3:
 - 
 ### Aula 4:
@@ -28,7 +31,7 @@
 - `Bootstrap`
 
 ## 🛠️ Abrir e rodar o projeto
-Para abrir e rodar o projeto, execute `npm i` para instalar as dependências e `npm run start` para inicar o projeto.
+Para abrir e rodar o projeto, execute `npm i` para instalar as dependências e `npm run start` para iniciar o projeto.
 
 ## 📚 Mais informações do curso
 Busque na plataforma da Alura o curso **TypeScript parte 2: avançando na linguagem** publicado na Escola Frontend.
