@@ -9,7 +9,7 @@ export class NegociacaoController {
   private inputQuantidade: HTMLInputElement
   private inputValor: HTMLInputElement
   private negociacoes = new Negociacoes() // ou private negociacoes: Negociacoes = new Negociacoes()
-  private negociacoesView = new NegociacoesView('#negociacoesView')
+  private negociacoesView = new NegociacoesView('#negociacoesView', true)
   private mensagemView = new MensagemView('#mensagemView')
 
   constructor() {
@@ -20,7 +20,8 @@ export class NegociacaoController {
   }
 
   public adiciona(): void { 
-    const negociacao = this.criaNegociacao()
+    // consigo acessar o método criaNegociacao pelo ponto . pq lá em negociação eu coloquei o metodo como static
+    const negociacao = Negociacao.criaNegociacao(this.inputData.value, this.inputQuantidade.value, this.inputValor.value)
     console.log('Negociação', negociacao)
     console.log('Volume', negociacao.volume)
 
@@ -32,15 +33,6 @@ export class NegociacaoController {
     } else {
       this.mensagemView.update("Apenas negociações em dias úteis são permitidas!")
     }
-  }
-  
-  private criaNegociacao(): Negociacao {
-    const regExp = /-/g
-    const date = new Date(this.inputData.value.replace(regExp, ','))
-    const quantidade = parseInt(this.inputQuantidade.value)
-    const valor = parseFloat(this.inputValor.value)
-    
-    return new Negociacao(date, quantidade, valor)
   }
   
   private limparFormulario(): void {

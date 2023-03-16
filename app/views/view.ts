@@ -2,10 +2,14 @@
 // Classe Abstrata: você não pode criar uma instância diretamente dela. Você só pode se o filho herda essa classe e você cria uma instância no filho.
 export abstract class View<T> {
   // foi usado o protected para que a classe filha poder acessar 'elemento' (class negociacoesView e mensagemView)
-  protected elemento: HTMLElement 
+  protected elemento: HTMLElement
+  private escapar = false // ou private escapar: boolean = false
 
-  constructor(seletor: string) {
+  constructor(seletor: string, escapar?: boolean) {
     this.elemento = document.querySelector(seletor)
+    if(escapar) {
+      this.escapar = escapar
+    }
   }
 
   // aqui um método abstrato: É um método que a classe pai não sabe como vai ser implementado. Vai ser responsabilidade da classe filha.
@@ -16,7 +20,10 @@ export abstract class View<T> {
   }*/
 
   public update(model: T): void {
-    const template = this.template(model)
+    let template = this.template(model)
+    if(this.escapar) {
+      template = template.replace(/<script>[\s\S]*?<\/script>/, '')
+    }
     this.elemento.innerHTML = template
   }
 

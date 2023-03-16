@@ -17,4 +17,11 @@ export class Negociacao {
     get volume() {
         return this._quantidade * this._valor;
     }
+    static criaNegociacao(dataString, quantidadeString, valorString) {
+        const regExp = /-/g;
+        const date = new Date(dataString.replace(regExp, ','));
+        const quantidade = parseInt(quantidadeString);
+        const valor = parseFloat(valorString);
+        return new Negociacao(date, quantidade, valor);
+    }
 }
