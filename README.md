@@ -11,7 +11,10 @@
 - Classes abstratas; :white_check_mark:
 - O modificador protected. :white_check_mark:
 ### Aula 3:
-- 
+- Visibilidade de métodos; :white_check_mark:
+- Validando negociações em dias úteis; :white_check_mark:
+- Vantagens do uso de enums; :white_check_mark:
+- Cuidados com enums. :white_check_mark:
 ### Aula 4:
 - 
 ### Aula 5 final:

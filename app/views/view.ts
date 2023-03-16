@@ -10,11 +10,12 @@ export abstract class View<T> {
 
   // aqui um método abstrato: É um método que a classe pai não sabe como vai ser implementado. Vai ser responsabilidade da classe filha.
   // isso força (de quem herda view) a implementar o template nas classes filhas
-  abstract template(model: T): string /*{ Method 'template' cannot have an implementation (um bloco {}) because it is marked abstract!
+  // protected: para o método aparecer só para as classes filhas (que receberam a extends de view, obs: obviamente o pai também acessa)
+  protected abstract template(model: T): string /*{ Method 'template' cannot have an implementation (um bloco {}) because it is marked abstract!
     throw Error('Classe filha precisa implementar o método template')
   }*/
 
-  update(model: T): void {
+  public update(model: T): void {
     const template = this.template(model)
     this.elemento.innerHTML = template
   }
