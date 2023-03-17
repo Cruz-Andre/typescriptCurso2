@@ -2,11 +2,15 @@ import { NegociacaoController } from "./controllers/negociacaoController.js";
 
 const controller = new NegociacaoController()
 const form = document.querySelector('.form')
-form.addEventListener('submit', evento => {
-  evento.preventDefault()
-  controller.adiciona()
-    
-})
+if (form) { //pq do if ver video da aula 5.7
+  form.addEventListener('submit', evento => {
+    evento.preventDefault()
+    controller.adiciona()
+      
+  })
+} else {
+  throw Error('Não foi possível inicializar a aplicação. Verifique se o form existe');
+}
 
 
 

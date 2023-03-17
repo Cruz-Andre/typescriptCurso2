@@ -24,7 +24,10 @@
 - Parâmetros opcionais. :white_check_mark:
 
 ### Aula 5 final:
-- 
+- Remoção de comentários do código compilado; :white_check_mark:
+- Ativação do strictNullChecks; :white_check_mark:
+- Como suprimir erros, quando fizer sentido, resultantes do strictNullChecks; :white_check_mark:
+- Benefícios do strictNullChecks no controle do fluxo da sua aplicação. :white_check_mark:
 
 ## 🔨 A saber sobre o curso
 - Aprenda a utilizar modificadores de acesso, herança e tipos genéricos
